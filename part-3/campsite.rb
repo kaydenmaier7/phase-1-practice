@@ -1,4 +1,6 @@
-class Campsite
+require_relative 'assigned'
+
+class Campsite < Assigned
   attr_reader :location, :square_footage
   attr_accessor :assigned_employee
 
@@ -33,7 +35,7 @@ class Campsite
     !reserved?
   end
 
-  def assigned?
-    !!@assigned_employee
-  end
+  # def assigned?
+  #   !!@assigned_employee # turns into boolean
+  # end
 end

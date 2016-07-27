@@ -1,4 +1,6 @@
-class WaterBottle
+require_relative 'camp_items'
+
+class WaterBottle < CampItems
   attr_reader :capacity, :material
 
   def initialize(args = {})
@@ -6,31 +8,31 @@ class WaterBottle
     @material = args.fetch(:material) { "tin" }
   end
 
-  def reserve
-    @reserved = true
-  end
+  # def reserve
+  #   @reserved = true
+  # end
 
-  def end_reservation
-    @reserved = false
-  end
+  # def end_reservation
+  #   @reserved = false
+  # end
 
-  def reserved?
-    @reserved
-  end
+  # def reserved?
+  #   @reserved
+  # end
 
-  def available?
-    !reserved?
-  end
+  # def available?
+  #   !reserved?
+  # end
 
-  def damaged?
-    @damaged
-  end
+  # def damaged?
+  #   @damaged
+  # end
 
-  def record_damage
-    @damaged = true
-  end
+  # def record_damage
+  #   @damaged = true
+  # end
 
-  def repair
-    @damaged = false
-  end
+  # def repair
+  #   @damaged = false
+  # end
 end

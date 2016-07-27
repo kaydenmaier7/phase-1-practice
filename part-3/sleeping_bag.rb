@@ -1,4 +1,6 @@
-class SleepingBag
+require_relative 'camp_items'
+
+class SleepingBag < CampItems
   attr_reader :style, :size, :shell
 
   def initialize(args = {})
@@ -7,31 +9,31 @@ class SleepingBag
     @shell = args.fetch(:shell) { "nylon" }
   end
 
-  def reserve
-    @reserved = true
-  end
+  # def reserve
+  #   @reserved = true
+  # end
 
-  def end_reservation
-    @reserved = false
-  end
+  # def end_reservation
+  #   @reserved = false
+  # end
 
-  def reserved?
-    @reserved
-  end
+  # def reserved?
+  #   @reserved
+  # end
 
-  def available?
-    !reserved?
-  end
+  # def available?
+  #   !reserved?
+  # end
 
-  def damaged?
-    @damaged
-  end
+  # def damaged?
+  #   @damaged
+  # end
 
-  def record_damage
-    @damaged = true
-  end
+  # def record_damage
+  #   @damaged = true
+  # end
 
-  def repair
-    @damaged = false
-  end
+  # def repair
+  #   @damaged = false
+  # end
 end

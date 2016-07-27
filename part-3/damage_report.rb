@@ -1,4 +1,6 @@
-class DamageReport
+require_relative 'assigned'
+
+class DamageReport < Assigned
   attr_reader :description
   attr_accessor :assigned_employee
 
@@ -7,15 +9,16 @@ class DamageReport
     @resolved = false
   end
 
-  def resolved?
-    !!@resolved
-  end
+  include ReportStatus
+  # def resolved?
+  #   !!@resolved
+  # end
 
-  def close
-    @resolved = true
-  end
+  # def close
+  #   @resolved = true
+  # end
 
-  def assigned?
-    !!@assigned_employee
-  end
+  # def assigned?
+  #   !!@assigned_employee
+  # end
 end
